@@ -1,13 +1,14 @@
 {
   "name": "ant-design-pro",
   "version": "5.2.0",
-  "homepage": "https://ZengZhenfei.github.io/fastapi-ui-ant-main",
-  "private": true,
+  "homepage": ".",
+  "private": false,
   "description": "An out-of-box UI solution for enterprise applications",
   "scripts": {
     "analyze": "cross-env ANALYZE=1 umi build",
     "build": "umi build",
-    "deploy": "npm run build && npm run gh-pages",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist -r https://github.com/ZengZhenfei/fastapi-ui-ant-main.git -b gh-pages2",
     "dev": "npm run start:dev",
     "docker-hub:build": "docker build  -f Dockerfile.hub -t  ant-design-pro ./",
     "docker-prod:build": "docker-compose -f ./docker/docker-compose.yml build",
